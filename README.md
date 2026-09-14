@@ -41,7 +41,7 @@ chip or social link empty to hide it. Changes preview live; click **Publish**.
   Refund and Cancellation Policy*. Edit them like any page; they use the
   **Legal document** template (title band, "On this page" index).
 * **Leads** — every waitlist and contact submission is stored under *Leads* and
-  e-mailed to the address set in section 9.
+  e-mailed to the address set in section 9 (default: contact@paymerch.us).
 
 ## Phone calculator
 

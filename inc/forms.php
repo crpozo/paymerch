@@ -92,6 +92,9 @@ function paymerch_store_lead( $type, $title, $body, $meta ) {
 	}
 
 	$to = sanitize_email( paymerch_get( 'notify_email' ) );
+	if ( ! $to ) {
+		$to = get_option( 'admin_email' );
+	}
 	if ( $to ) {
 		$subject = sprintf(
 			/* translators: 1: site name, 2: form type */

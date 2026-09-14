@@ -155,7 +155,7 @@ function paymerch_content_sections() {
 				'contact_title'  => array( 'label' => __( 'Form title', 'paymerch' ), 'type' => 'text', 'default' => 'Send Us a Direct Message' ),
 				'contact_sub'    => array( 'label' => __( 'Form subtitle', 'paymerch' ), 'type' => 'text', 'default' => 'Our compliance and customer team replies in less than 24 hours.' ),
 				'contact_button' => array( 'label' => __( 'Form button', 'paymerch' ), 'type' => 'text', 'default' => 'Send Message' ),
-				'notify_email'   => array( 'label' => __( 'Email that receives waitlist & contact submissions', 'paymerch' ), 'type' => 'email', 'default' => '' ),
+				'notify_email'   => array( 'label' => __( 'Email that receives waitlist & contact submissions', 'paymerch' ), 'type' => 'email', 'default' => 'contact@paymerch.us' ),
 			),
 		),
 		'footer'     => array(
@@ -190,10 +190,6 @@ function paymerch_field_def( $key ) {
 			foreach ( $section['fields'] as $id => $field ) {
 				$flat[ $id ] = $field;
 			}
-		}
-		// Runtime default that can't live in the static table.
-		if ( '' === $flat['notify_email']['default'] ) {
-			$flat['notify_email']['default'] = get_option( 'admin_email' );
 		}
 	}
 	return isset( $flat[ $key ] ) ? $flat[ $key ] : null;

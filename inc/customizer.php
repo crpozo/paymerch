@@ -36,9 +36,6 @@ function paymerch_customize_register( $wp_customize ) {
 			if ( 'image' === $field['type'] && '' !== $default ) {
 				$default = paymerch_asset( 'img/' . $default );
 			}
-			if ( 'notify_email' === $key && '' === $default ) {
-				$default = get_option( 'admin_email' );
-			}
 
 			$wp_customize->add_setting(
 				$setting_id,
