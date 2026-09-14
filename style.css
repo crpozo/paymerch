@@ -1,0 +1,17 @@
+/*
+Theme Name: Paymerch
+Theme URI: https://paymerch.us
+Author: MindfulTech
+Author URI: https://mindfultech.ec
+Description: Landing page theme for Paymerch: hero with a live transfer calculator (Wise-style currency picker), corridors, steps, waitlist and contact forms, and legal pages. Every text and image is editable in Appearance → Customize → Paymerch; no page builder or plugins required.
+Version: 1.1.0
+Requires at least: 6.0
+Tested up to: 6.8
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: paymerch
+Tags: one-column, custom-menu, custom-logo, featured-images, translation-ready
+*/
+
+/* All styles live in assets/css/main.css (enqueued from functions.php). */
