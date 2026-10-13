@@ -1,0 +1,19 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "23X2B3H524.com.paymerch.mobileapptest",
+        "paths": [
+          "*"
+        ]
+      },
+      {
+        "appID": "23X2B3H524.com.paymerch.app",
+        "paths": [
+          "*"
+        ]
+      }
+    ]
+  }
+}

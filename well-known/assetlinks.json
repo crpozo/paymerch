@@ -1,0 +1,22 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.paymerch.prodmobileapp",
+      "sha256_cert_fingerprints": [
+        "B5:4F:1D:95:81:C4:7D:7E:FE:16:C4:BA:9A:3F:5A:F7:9F:4B:D4:60:BB:60:9E:E9:49:F8:8D:E4:ED:46:E7:F7"
+      ]
+    }
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.paymerch.apptest",
+      "sha256_cert_fingerprints": [
+        "4E:CD:03:60:27:99:C0:61:6C:5E:69:50:31:AC:7A:6D:79:91:05:D6:DD:1F:92:A3:B8:33:41:E8:E5:F9:3A:B6"
+      ]
+    }
+  }
+]

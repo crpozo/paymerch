@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'PAYMERCH_VERSION', '1.1.0' );
+define( 'PAYMERCH_VERSION', '1.1.1' );
 define( 'PAYMERCH_DIR', get_template_directory() );
 define( 'PAYMERCH_URI', get_template_directory_uri() );
 
@@ -17,6 +17,7 @@ require PAYMERCH_DIR . '/inc/currencies.php';
 require PAYMERCH_DIR . '/inc/customizer.php';
 require PAYMERCH_DIR . '/inc/forms.php';
 require PAYMERCH_DIR . '/inc/legal.php';
+require PAYMERCH_DIR . '/inc/well-known.php';
 
 /**
  * Theme supports, menus, text domain.

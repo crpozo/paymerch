@@ -106,3 +106,16 @@ paymerch/
 * The Terms are governed by Georgia law while the footer address is in Delaware;
   the documents' phone number (+1 505 630-0042) is not shown in the footer.
 * Flags (flagcdn.com) and rates (open.er-api.com) are free external services.
+
+## App deep links (`/.well-known/`)
+
+Finvenit's app needs two files on paymerch.us:
+
+* `https://paymerch.us/.well-known/assetlinks.json` (Android App Links)
+* `https://paymerch.us/.well-known/apple-app-site-association` (iOS Universal Links)
+
+They ship in `well-known/` and the theme serves them at those URLs
+(`inc/well-known.php`), so nothing has to be uploaded to the web root. If the
+hosting already has a physical `/.well-known/` folder, the web server wins — drop
+the same two files there (the Apple one has no extension and must be served as
+`application/json`). To update them, replace the files in `well-known/`.
