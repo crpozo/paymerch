@@ -46,7 +46,7 @@
 			<a href="<?php echo esc_url( paymerch_get( 'play_store_url' ) ); ?>" target="_blank" rel="noopener">
 				<?php paymerch_img( 'badge-google-play-es.png', __( 'Get it on Google Play', 'paymerch' ) ); ?>
 			</a>
-			<?php paymerch_image( 'qr_image', __( 'QR code to download the Paymerch app', 'paymerch' ), 'pm-hero__qr' ); ?>
+			<?php if ( '' !== paymerch_get( 'qr_image' ) ) { paymerch_image( 'qr_image', __( 'QR code to download the Paymerch app', 'paymerch' ), 'pm-hero__qr' ); } ?>
 			<a href="<?php echo esc_url( paymerch_get( 'app_store_url' ) ); ?>" target="_blank" rel="noopener">
 				<?php paymerch_img( 'badge-app-store-es.png', __( 'Download on the App Store', 'paymerch' ) ); ?>
 			</a>

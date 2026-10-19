@@ -34,7 +34,7 @@ $pm_custom_photo = paymerch_get( 'steps_photo' ) !== paymerch_asset( 'img/onmobi
 							<p class="pm-step__text"><?php paymerch_field( "step{$pm_i}_text" ); ?></p>
 							<?php if ( 1 === $pm_i ) : ?>
 								<div class="pm-step__download">
-									<?php paymerch_image( 'qr_image', __( 'QR code to download the Paymerch app', 'paymerch' ), 'pm-step__qr' ); ?>
+									<?php if ( '' !== paymerch_get( 'qr_image' ) ) { paymerch_image( 'qr_image', __( 'QR code to download the Paymerch app', 'paymerch' ), 'pm-step__qr' ); } ?>
 									<div class="pm-step__badges">
 										<a href="<?php echo esc_url( paymerch_get( 'play_store_url' ) ); ?>" target="_blank" rel="noopener">
 											<?php paymerch_img( 'badge-google-play-es.png', __( 'Get it on Google Play', 'paymerch' ) ); ?>

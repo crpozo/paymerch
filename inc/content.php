@@ -66,7 +66,7 @@ function paymerch_content_sections() {
 				'calc_cta_url'       => array( 'label' => __( 'Screen button link', 'paymerch' ), 'type' => 'url', 'default' => '#waitlist' ),
 				'app_store_url'      => array( 'label' => __( 'App Store URL', 'paymerch' ), 'type' => 'url', 'default' => '#' ),
 				'play_store_url'     => array( 'label' => __( 'Google Play URL', 'paymerch' ), 'type' => 'url', 'default' => '#' ),
-				'qr_image'           => array( 'label' => __( 'QR code image', 'paymerch' ), 'type' => 'image', 'default' => 'qr.png' ),
+				'qr_image'           => array( 'label' => __( 'QR code image (optional — leave empty to hide)', 'paymerch' ), 'type' => 'image', 'default' => '' ),
 			),
 		),
 		'see'        => array(

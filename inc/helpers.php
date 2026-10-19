@@ -74,7 +74,9 @@ function paymerch_image( $key, $alt = '', $class = '', $attrs = array() ) {
 	$url     = paymerch_get( $key );
 
 	if ( '' === $url || $url === $default || $url === paymerch_asset( 'img/' . $default ) ) {
-		paymerch_img( $default, $alt, $class, $attrs );
+		if ( '' !== $default ) {
+			paymerch_img( $default, $alt, $class, $attrs );
+		}
 		return;
 	}
 	$attributes = array_merge(

@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'PAYMERCH_VERSION', '1.1.2' );
+define( 'PAYMERCH_VERSION', '1.1.3' );
 define( 'PAYMERCH_DIR', get_template_directory() );
 define( 'PAYMERCH_URI', get_template_directory_uri() );
 
