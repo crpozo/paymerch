@@ -1,0 +1,68 @@
+# Local preview of the paymerch-figma theme.
+#   docker compose up -d        → http://localhost:8080  (admin: /wp-admin, admin / admin)
+#   docker compose down         → stop (keeps the database)
+#   docker compose down -v      → stop and wipe everything
+# The theme folder is mounted live: edit files and reload the browser.
+
+name: paymerch
+
+services:
+  db:
+    image: mariadb:11.4
+    restart: unless-stopped
+    environment:
+      MARIADB_DATABASE: wordpress
+      MARIADB_USER: wordpress
+      MARIADB_PASSWORD: wordpress
+      MARIADB_ROOT_PASSWORD: root
+    volumes:
+      - db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  wordpress:
+    image: wordpress:6.8-php8.3-apache
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8080:80"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DEBUG: "1"
+    volumes:
+      - wp:/var/www/html
+      - ../paymerch-figma:/var/www/html/wp-content/themes/paymerch-figma
+
+  # One-shot setup: installs WordPress, activates the theme and creates the
+  # landing pages. Safe to re-run (docker compose run --rm setup).
+  setup:
+    image: wordpress:cli-php8.3
+    user: "33:33"
+    depends_on:
+      db:
+        condition: service_healthy
+      wordpress:
+        condition: service_started
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+    volumes:
+      - wp:/var/www/html
+      - ../paymerch-figma:/var/www/html/wp-content/themes/paymerch-figma
+      - ./setup.sh:/setup.sh:ro
+    entrypoint: ["sh", "/setup.sh"]
+    restart: "no"
+
+volumes:
+  db:
+  wp:
